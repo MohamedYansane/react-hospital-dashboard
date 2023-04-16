@@ -18,7 +18,9 @@ module.exports = {
                 'corben': ['Corben'],
                 'red-hat': ['Red Hat Display', 'sans-serif'],
             },
-
+            colors: {
+                "doctor-blue": '#5073fb'
+            },
             screens: {
                 'my': { 'min': '309px', 'max': '450px' },
                 'lgmy': { 'min': '1204px', 'max': '1500px' },
