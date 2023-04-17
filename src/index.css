@@ -90,6 +90,34 @@
         height: 100%;
         top: 0;
         right: 0;
+        padding: 8px 20px 0px;
+        overflow-y: scroll;
+    }
+    .over-view {
+        display: flex;
+        flex-direction: column;
+    }
+    .title {
+        display: flex;
+        justify-content: space-between;
+    }
+    .cards {
+        display: flex;
+        align-items: center;
+        overflow-x: scroll;
+        gap: 10px;
+        padding-top: 5px;
+    }
+    .card {
+        min-width: 230px;
+        height: auto;
+    }
+    .card-title span {
+        font-weight: bold;
+        font-size: 1rem;
+    }
+    .card-icon {
+        font-size: 60px !important;
     }
 }
 
@@ -109,9 +137,7 @@
     .search-bar {
         @apply rounded-md flex content-center items-center
     }
-    .main {
-        @apply bg-slate-500
-    }
+    .main {}
     .sidebar {
         @apply bg-white
     }
@@ -119,6 +145,10 @@
         @apply list-none
     }
     .main-content {
-        @apply bg-orange-600
+        @apply bg-slate-50
+    }
+    .over-view {}
+    .card {
+        @apply bg-white p-5
     }
 }

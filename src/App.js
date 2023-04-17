@@ -13,7 +13,10 @@ import {
   SignalCellularAlt,
   Settings,
   Logout,
+  Schedule,
+  Bed,
 } from "@mui/icons-material";
+import { OverviewCards } from "./components/cards/Cards";
 
 function App() {
   return (
@@ -70,7 +73,74 @@ function App() {
           </ul>
           {/** end of sidebar bottom */}
         </section>
-        <section className="main-content"></section>
+        <section className="main-content">
+          {/*begining of overview section (div) including cards */}
+          <div className="over-view">
+            {/*begining of title section (div) */}
+            <div className="title">
+              <h1 className="section-title">Overview</h1>
+              <select name="" id="" defaultValue="filter">
+                <option value="filter" disabled>
+                  Filter
+                </option>
+                <option value="today">Today</option>
+                <option value="today">Last Week</option>
+              </select>
+            </div>
+            {/*end of title section (div) */}
+
+            {/*begining of over-view cards  */}
+            <div className="cards over-view-cards">
+              <OverviewCards
+                className="card-1"
+                card_title="Total Doctors"
+                number="150"
+                icon={<PermIdentity className="card-icon" />}
+                stat1="65%"
+                stat2="10"
+                stat3="2"
+              />
+
+              <OverviewCards
+                className="card-2"
+                card_title="Total Patient"
+                number="1145"
+                icon={<Person className="card-icon" />}
+                stat1="82%"
+                stat2="230"
+                stat3="45"
+              />
+              <OverviewCards
+                className="card-3"
+                card_title="Schedule"
+                number="150"
+                icon={<CalendarMonth className="card-icon" />}
+                stat1="27%"
+                stat2="31"
+                stat3="23"
+              />
+              <OverviewCards
+                className="card-4"
+                card_title="Bedrooms"
+                number="150"
+                icon={<Bed className="card-icon" />}
+                stat1="8%"
+                stat2="11"
+                stat3="2"
+              />
+            </div>
+            {/*end of over-view cards  */}
+          </div>
+          {/*end of overview section (div) including cards */}
+
+          {/*begining of doctors section (div) including cards */}
+          <div className="doctors">
+            <div className="title">
+              <h1 className="section-title"></h1>
+            </div>
+          </div>
+          {/*end of doctors section (div) including cards */}
+        </section>
       </section>
     </>
   );
