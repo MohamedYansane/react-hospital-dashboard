@@ -10,12 +10,12 @@ import {
   ListRounded,
   Search,
 } from "@mui/icons-material";
-export const Header = ({ dashboard, photo }) => {
+export const Header = ({ dashboard, photo, setClass }) => {
   return (
     <>
       <section className="header w-full">
         <div className="logo">
-          <ListRounded className=" menu" />
+          <ListRounded className=" menu" onClick={setClass} />
           <h1 className="font-bold text-xl">
             Med<span className="text-doctor-blue">Ex</span>
           </h1>
