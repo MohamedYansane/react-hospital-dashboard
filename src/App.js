@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import "./App.css";
 import { Header } from "./components/header/Header";
 import dashboard from "./menu.png";
@@ -20,15 +21,26 @@ import {
   Settings,
   Logout,
   Bed,
+  AddCircleOutline,
+  Edit,
+  Delete,
 } from "@mui/icons-material";
 import { DoctorsCards, OverviewCards } from "./components/cards/Cards";
 
 function App() {
+  const [active, setActive] = useState(false);
+  const setClass = () => {
+    setActive(!active);
+    //active ? setActive(false) : setActive(true);
+    console.log(active);
+  };
+
   return (
     <>
-      <Header dashboard={dashboard} photo={doctor} />
+      <Header dashboard={dashboard} photo={doctor} setClass={setClass} />
       <section className="main w-full">
-        <section className="sidebar">
+        {/** adding a new class name to the existing class name like this. */}
+        <section className={`sidebar ${active ? "active" : ""} `}>
           {/** begining of top sidebar  */}
           <ul className="sidebar-items">
             <Navbar
@@ -142,13 +154,21 @@ function App() {
           <div className="doctors">
             <div className="title">
               <h1 className="section-title">Doctors</h1>
-              <select name="" id="" defaultValue="filter">
-                <option value="filter" disabled>
-                  Filter
-                </option>
-                <option value="today">Today</option>
-                <option value="today">Last Week</option>
-              </select>
+              <div className="filter add">
+                <select name="" id="" defaultValue="filter">
+                  <option value="filter" disabled>
+                    Filter
+                  </option>
+                  <option value="today">Today</option>
+                  <option value="today">Last Week</option>
+                </select>
+                <button
+                  type="submit"
+                  className="bg-doctor-blue text-white p-1 rounded-md"
+                >
+                  <AddCircleOutline /> Add Doctor
+                </button>
+              </div>
             </div>
             {/** begining of doctors card */}
             <div className="cards">
@@ -212,6 +232,126 @@ function App() {
           {/*end of doctors section (div) including cards */}
 
           {/** beginning of reccent patients  */}
+          <div className="recent-patients pt-2">
+            <div className="title">
+              <h1 className="section-title">Recent Patients</h1>
+              <button
+                type="submit"
+                className="bg-doctor-blue text-white p-1 rounded-md"
+              >
+                <AddCircleOutline /> Add Patient{" "}
+              </button>
+            </div>
+            {/** begining of the table part */}
+            <div className="table bg-white w-full overflow-y-scroll">
+              <table className="w-full text-left">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Date in</th>
+                    <th>Gender</th>
+                    <th>Weight</th>
+                    <th>Status</th>
+                    <th>Settings</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Bintou Merline</td>
+                    <td>30/04/2017</td>
+                    <td>Female</td>
+                    <td>25kg</td>
+                    <td className="pending">Pending</td>
+                    <td>
+                      <span>
+                        <Edit />
+                        <Delete />
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Mohamed Fofana</td>
+                    <td>30/04/2000</td>
+                    <td>Male</td>
+                    <td>65kg</td>
+                    <td className="confirmed">Confirmed</td>
+                    <td>
+                      <span>
+                        <Edit />
+                        <Delete />
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Penda Diouf</td>
+                    <td>30/04/2000</td>
+                    <td>Female</td>
+                    <td>75kg</td>
+                    <td className="pending">Pending</td>
+                    <td>
+                      <span>
+                        <Edit />
+                        <Delete />
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Namory Keita</td>
+                    <td>20/04/2000</td>
+                    <td>Female</td>
+                    <td>85kg</td>
+                    <td className="rejected">Rejected</td>
+                    <td>
+                      <span>
+                        <Edit />
+                        <Delete />
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Jude Obaka</td>
+                    <td>31/05/2001</td>
+                    <td>Female</td>
+                    <td>105kg</td>
+                    <td className="pending">Pending</td>
+                    <td>
+                      <span>
+                        <Edit />
+                        <Delete />
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Mamadou Bobo Diallo</td>
+                    <td>20/04/2000</td>
+                    <td>Female</td>
+                    <td>85kg</td>
+                    <td className="rejected">Rejected</td>
+                    <td>
+                      <span>
+                        <Edit />
+                        <Delete />
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Hadiatou Diallo</td>
+                    <td>31/05/2001</td>
+                    <td>Female</td>
+                    <td>55kg</td>
+                    <td className="pending">Pending</td>
+                    <td>
+                      <span>
+                        <Edit />
+                        <Delete />
+                      </span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            {/** end of table part */}
+          </div>
           {/** end of reccent patients  */}
         </section>
       </section>
