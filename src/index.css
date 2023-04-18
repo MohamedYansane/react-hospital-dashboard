@@ -72,13 +72,25 @@
         margin: 0;
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        gap: 10px;
     }
     .sidebar-items li button,
     .sidebar-bottom-items li button {
         display: flex;
         align-items: center;
         gap: 10px;
+    }
+    li {
+        padding: 5px;
+    }
+    li:hover {
+        background-color: #5073fb;
+        color: #fff;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
     }
     .icon {
         display: flex;
@@ -90,7 +102,7 @@
         height: 100%;
         top: 0;
         right: 0;
-        padding: 8px 20px 0px;
+        padding: 8px 30px 0px;
         overflow-y: scroll;
     }
     .over-view {
@@ -103,13 +115,12 @@
     }
     .cards {
         display: flex;
-        align-items: center;
+        justify-content: space-between;
         overflow-x: scroll;
-        gap: 10px;
         padding-top: 5px;
     }
     .card {
-        min-width: 230px;
+        min-width: 240px;
         transition: .3;
         height: auto;
     }
@@ -122,6 +133,10 @@
     }
     .doctors {
         padding-top: 5px;
+    }
+    .add {
+        display: flex;
+        gap: 8px;
     }
     .doc-card-content {
         display: flex;
@@ -149,6 +164,20 @@
         width: 60px;
         height: 60px;
         overflow: hidden;
+    }
+    .table {
+        height: 200px;
+        margin-top: 5px;
+    }
+    table {
+        width: 100%;
+    }
+    tr {
+        border-bottom: 1px solid #f1f1f1;
+    }
+    td,
+    th {
+        padding: 10px;
     }
 }
 
