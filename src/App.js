@@ -2,6 +2,12 @@ import "./App.css";
 import { Header } from "./components/header/Header";
 import dashboard from "./menu.png";
 import doctor from "./doctor2.png";
+import doctor1 from "./doctor1.png";
+import doctor3 from "./doctor3.png";
+import doctorFemale1 from "./doctorFemale1.png";
+import doctorFemale2 from "./doctorFemale2.png";
+import drpriyadarshi from "./dr-priyadarshi-jitendra-kumar.png";
+import yansane from "./yansane.png";
 import { Navbar } from "./components/navbar/Navbar";
 // remarque si je veux leurs importer d'un seul coup je dois enlever Icon à la fin de ui ex: NotificationsActiveIcon
 import {
@@ -13,10 +19,9 @@ import {
   SignalCellularAlt,
   Settings,
   Logout,
-  Schedule,
   Bed,
 } from "@mui/icons-material";
-import { OverviewCards } from "./components/cards/Cards";
+import { DoctorsCards, OverviewCards } from "./components/cards/Cards";
 
 function App() {
   return (
@@ -136,10 +141,78 @@ function App() {
           {/*begining of doctors section (div) including cards */}
           <div className="doctors">
             <div className="title">
-              <h1 className="section-title"></h1>
+              <h1 className="section-title">Doctors</h1>
+              <select name="" id="" defaultValue="filter">
+                <option value="filter" disabled>
+                  Filter
+                </option>
+                <option value="today">Today</option>
+                <option value="today">Last Week</option>
+              </select>
             </div>
+            {/** begining of doctors card */}
+            <div className="cards">
+              <DoctorsCards
+                photo={yansane}
+                occupation="Scheduled"
+                className="text-doctor-blue"
+                text_color="text-doctor-blue"
+              />
+              <DoctorsCards
+                photo={yansane}
+                occupation="Scheduled"
+                className="text-doctor-blue"
+                text_color="text-doctor-blue"
+              />
+              <DoctorsCards
+                photo={doctor3}
+                occupation="Scheduled"
+                className="text-doctor-blue"
+                text_color="text-doctor-blue"
+              />
+              <DoctorsCards
+                photo={doctorFemale1}
+                occupation="Free"
+                className="text-red-600"
+                text_color="text-red-600"
+              />
+              <DoctorsCards
+                photo={doctor1}
+                occupation="Free"
+                className="text-doctor-blue"
+                text_color="text-red-600"
+              />
+              <DoctorsCards
+                photo={drpriyadarshi}
+                occupation="Scheduled"
+                className="text-doctor-blue"
+                text_color="text-doctor-blue"
+              />
+              <DoctorsCards
+                photo={doctorFemale2}
+                occupation="Scheduled"
+                className="text-doctor-blue"
+                text_color="text-doctor-blue"
+              />
+              <DoctorsCards
+                photo={doctorFemale1}
+                occupation="Free"
+                className="text-red-600"
+                text_color="text-red-600"
+              />
+              <DoctorsCards
+                photo={doctor1}
+                occupation="Free"
+                className="text-doctor-blue"
+                text_color="text-red-600"
+              />
+            </div>
+            {/** end of doctors card */}
           </div>
           {/*end of doctors section (div) including cards */}
+
+          {/** beginning of reccent patients  */}
+          {/** end of reccent patients  */}
         </section>
       </section>
     </>

@@ -110,6 +110,7 @@
     }
     .card {
         min-width: 230px;
+        transition: .3;
         height: auto;
     }
     .card-title span {
@@ -118,6 +119,36 @@
     }
     .card-icon {
         font-size: 60px !important;
+    }
+    .doctors {
+        padding-top: 5px;
+    }
+    .doc-card-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        height: 134px;
+        width: 102px;
+        transition: .3;
+        -webkit-transition: .3;
+        -moz-transition: .3;
+        -ms-transition: .3;
+        -o-transition: .3;
+    }
+    .img-doctor-div {
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+        align-items: center;
+        border: 1px solid #5073fb;
+        padding: 2px;
+    }
+    .img-box {
+        width: 60px;
+        height: 60px;
+        overflow: hidden;
     }
 }
 
@@ -150,5 +181,11 @@
     .over-view {}
     .card {
         @apply bg-white p-5
+    }
+    .doc-card-content {
+        @apply rounded-xl shadow-lg
+    }
+    .img-box {
+        @apply rounded-full
     }
 }

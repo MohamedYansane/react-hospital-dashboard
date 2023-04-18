@@ -41,6 +41,16 @@ export const OverviewCards = ({
     </>
   );
 };
-export const DoctorsCards = () => {
-  return <></>;
+export const DoctorsCards = ({ photo, occupation, text_color }) => {
+  return (
+    <>
+      {/** the button must be Link for further more */}
+      <button className="doc-card-content p-4   h-auto bg-white">
+        <div className="img-doctor-div rounded-full">
+          <img src={photo} className="img-box " alt="doctor" />
+        </div>
+        <span className={text_color}>{occupation}</span>
+      </button>
+    </>
+  );
 };
