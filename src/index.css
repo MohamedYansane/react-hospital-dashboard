@@ -46,6 +46,13 @@
     .p-icon {
         font-size: 22px !important;
         cursor: pointer;
+        padding: 2px;
+        background: #f1f5f9;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
     }
     .lock-icon {
         font-size: 22px !important;
@@ -113,6 +120,14 @@
         display: flex;
         justify-content: space-between;
     }
+    .filter {
+        padding: 1px;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+    }
     .cards {
         display: flex;
         justify-content: space-between;
@@ -159,17 +174,27 @@
         align-items: center;
         border: 1px solid #5073fb;
         padding: 2px;
-    }
-    .img-box {
         width: 60px;
         height: 60px;
+    }
+    .img-box {
         overflow: hidden;
     }
-    .table {
-        height: 200px;
+    .recent-patients {
+        display: flex;
+        flex-direction: column;
+    }
+    .table-patient {
         margin-top: 5px;
+        height: 200px;
+        overflow-y: scroll;
     }
     table {
+        text-align: left;
+        /*The border-collapse property sets whether
+         table borders should collapse into a single border
+          or be separated as in standard HTML.*/
+        border-collapse: collapse;
         width: 100%;
     }
     tr {
@@ -181,9 +206,31 @@
     }
 }
 
+@media screen and (max-width: 1124px) {
+    .over-view-cards,
+    .cards {
+        gap: 10px;
+    }
+    .doc-card-content {
+        width: 102px;
+        height: 130px;
+    }
+}
+
+@media screen and (max-width: 674px) {
+    .sidebar {
+        width: 240px;
+        padding: 10px;
+    }
+    .main-content {
+        width: calc(100% - 240px);
+        padding: 8px 20px 0px;
+    }
+}
+
 @layer components {
     body {
-        @apply w-full
+        @apply w-full relative
     }
     .header {
         @apply bg-white font-jetbrain p-4
@@ -216,5 +263,17 @@
     }
     .img-box {
         @apply rounded-full
+    }
+    .table {
+        @apply relative
+    }
+    .pending {
+        @apply text-yellow-400
+    }
+    .confirmed {
+        @apply text-green-400
+    }
+    .rejected {
+        @apply text-red-400
     }
 }

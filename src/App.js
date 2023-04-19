@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./App.css";
 import { Header } from "./components/header/Header";
 import dashboard from "./menu.png";
@@ -90,13 +90,13 @@ function App() {
           </ul>
           {/** end of sidebar bottom */}
         </section>
-        <section className="main-content">
+        <section className={`main-content ${active ? "active" : ""}`}>
           {/*begining of overview section (div) including cards */}
           <div className="over-view">
             {/*begining of title section (div) */}
             <div className="title">
               <h1 className="section-title">Overview</h1>
-              <select name="" id="" defaultValue="filter">
+              <select name="" id="" defaultValue="filter" className="filter">
                 <option value="filter" disabled>
                   Filter
                 </option>
@@ -154,8 +154,8 @@ function App() {
           <div className="doctors">
             <div className="title">
               <h1 className="section-title">Doctors</h1>
-              <div className="filter add">
-                <select name="" id="" defaultValue="filter">
+              <div className=" add">
+                <select name="" id="" defaultValue="filter" className="filter">
                   <option value="filter" disabled>
                     Filter
                   </option>
@@ -239,12 +239,15 @@ function App() {
                 type="submit"
                 className="bg-doctor-blue text-white p-1 rounded-md"
               >
-                <AddCircleOutline /> Add Patient{" "}
+                <AddCircleOutline /> Add Patient
               </button>
             </div>
-            {/** begining of the table part */}
-            <div className="table bg-white w-full overflow-y-scroll">
-              <table className="w-full text-left">
+            {/** begining of the table part remarque quand je mets classe table
+             * la propriete height ne s'appliquera pas et overflow scroll non plus
+             * la classe table est deja implemente par tailwind
+             */}
+            <div className="table-patient bg-white ">
+              <table>
                 <thead>
                   <tr>
                     <th>Name</th>
@@ -264,8 +267,8 @@ function App() {
                     <td className="pending">Pending</td>
                     <td>
                       <span>
-                        <Edit />
-                        <Delete />
+                        <Edit className="text-green-400 cursor-pointer" />
+                        <Delete className="text-red-400 cursor-pointer" />
                       </span>
                     </td>
                   </tr>
@@ -277,8 +280,8 @@ function App() {
                     <td className="confirmed">Confirmed</td>
                     <td>
                       <span>
-                        <Edit />
-                        <Delete />
+                        <Edit className="text-green-400 cursor-pointer" />
+                        <Delete className="text-red-400 cursor-pointer" />
                       </span>
                     </td>
                   </tr>
@@ -290,8 +293,8 @@ function App() {
                     <td className="pending">Pending</td>
                     <td>
                       <span>
-                        <Edit />
-                        <Delete />
+                        <Edit className="text-green-400 cursor-pointer" />
+                        <Delete className="text-red-400 cursor-pointer" />
                       </span>
                     </td>
                   </tr>
@@ -303,8 +306,8 @@ function App() {
                     <td className="rejected">Rejected</td>
                     <td>
                       <span>
-                        <Edit />
-                        <Delete />
+                        <Edit className="text-green-400 cursor-pointer" />
+                        <Delete className="text-red-400 cursor-pointer" />
                       </span>
                     </td>
                   </tr>
@@ -316,8 +319,8 @@ function App() {
                     <td className="pending">Pending</td>
                     <td>
                       <span>
-                        <Edit />
-                        <Delete />
+                        <Edit className="text-green-400 cursor-pointer" />
+                        <Delete className="text-red-400 cursor-pointer" />
                       </span>
                     </td>
                   </tr>
@@ -329,8 +332,8 @@ function App() {
                     <td className="rejected">Rejected</td>
                     <td>
                       <span>
-                        <Edit />
-                        <Delete />
+                        <Edit className="text-green-400 cursor-pointer" />
+                        <Delete className="text-red-400 cursor-pointer" />
                       </span>
                     </td>
                   </tr>
@@ -342,8 +345,8 @@ function App() {
                     <td className="pending">Pending</td>
                     <td>
                       <span>
-                        <Edit />
-                        <Delete />
+                        <Edit className="text-green-400 cursor-pointer" />
+                        <Delete className="text-red-400 cursor-pointer" />
                       </span>
                     </td>
                   </tr>
