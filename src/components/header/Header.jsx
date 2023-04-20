@@ -28,7 +28,7 @@ export const Header = ({ dashboard, photo, setClass }) => {
               className="searchbar-input text-sm"
             />
             <button type="submit">
-              <Search />
+              <Search className="icon-search" />
             </button>
           </div>
           <div className="notifications-profile">
@@ -41,12 +41,13 @@ export const Header = ({ dashboard, photo, setClass }) => {
             <div className="p-icon switch">
               <DarkMode className=" w-7 h-7" />
             </div>
-
-            <ProfilImage
-              classe1="p-icon profile"
-              classe2="w-8 h-8"
-              photo={doctor}
-            />
+            <div className="p-icon-profile rounded-full p-1 bg-slate-100">
+              <ProfilImage
+                classe1=" profile"
+                classe2="w-8 h-8"
+                photo={doctor}
+              />
+            </div>
           </div>
         </div>
       </section>
