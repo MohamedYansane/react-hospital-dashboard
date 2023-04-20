@@ -234,13 +234,22 @@ function App() {
           {/** beginning of reccent patients  */}
           <div className="recent-patients pt-2">
             <div className="title">
-              <h1 className="section-title">Recent Patients</h1>
-              <button
-                type="submit"
-                className="bg-doctor-blue text-white p-1 rounded-md"
-              >
-                <AddCircleOutline /> Add Patient
-              </button>
+              <h1 className="section-title">Patients</h1>
+              <div className=" add">
+                <select name="" id="" defaultValue="filter" className="filter">
+                  <option value="filter" disabled>
+                    Filter
+                  </option>
+                  <option value="today">Today</option>
+                  <option value="today">Last Week</option>
+                </select>
+                <button
+                  type="submit"
+                  className="bg-doctor-blue text-white p-1 rounded-md"
+                >
+                  <AddCircleOutline /> Add Patient
+                </button>
+              </div>
             </div>
             {/** begining of the table part remarque quand je mets classe table
              * la propriete height ne s'appliquera pas et overflow scroll non plus

@@ -121,7 +121,7 @@
         justify-content: space-between;
     }
     .filter {
-        padding: 1px;
+        padding: 1px 5px 1px;
         border-radius: 5px;
         -webkit-border-radius: 5px;
         -moz-border-radius: 5px;
@@ -206,6 +206,26 @@
     }
 }
 
+
+/*Responsivity*/
+
+.sidebar.active {
+    width: 93px;
+}
+
+.sidebar.active .sidebar-item {
+    display: none;
+}
+
+.sidebar.active li {
+    display: flex;
+    align-items: center;
+}
+
+.main-content.active {
+    width: calc(100% - 93px);
+}
+
 @media screen and (max-width: 1124px) {
     .over-view-cards,
     .cards {
@@ -228,6 +248,57 @@
     }
 }
 
+@media screen and (max-width: 630px) {
+    /* transform: translateX(-100%); je masque le sidebar*/
+    .sidebar {
+        transform: translateX(-100%);
+        z-index: 10;
+        -webkit-transform: translateX(-100%);
+        -moz-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+        -o-transform: translateX(-100%);
+    }
+    /* transform: translateX(0); je reaffiche le sidebar*/
+    .sidebar.active {
+        transform: translateX(0);
+        width: 250px;
+        -webkit-transform: translateX(0);
+        -moz-transform: translateX(0);
+        -ms-transform: translateX(0);
+        -o-transform: translateX(0);
+    }
+    .sidebar.active .sidebar-item {
+        display: block;
+    }
+    .main {
+        @apply bg-slate-50
+    }
+    .main-content {
+        width: calc(100% - 0px);
+    }
+    .searchbar-notifications-profile {
+        gap: 5px;
+    }
+    .search-bar {
+        width: 200px;
+    }
+    .searchbar-input {
+        width: 170px;
+    }
+}
+
+@media screen and (max-width: 513px) {
+    .search-bar {
+        display: none;
+    }
+    .searchbar-notifications-profile {
+        justify-content: flex-end;
+    }
+    .filter {
+        display: none;
+    }
+}
+
 @layer components {
     body {
         @apply w-full relative
@@ -244,15 +315,17 @@
     .search-bar {
         @apply rounded-md flex content-center items-center
     }
-    .main {}
+    .icon-search {
+        font-size: 18px !important;
+    }
+    .main {
+        @apply bg-slate-50
+    }
     .sidebar {
         @apply bg-white
     }
     .sidebar-items {
         @apply list-none
-    }
-    .main-content {
-        @apply bg-slate-50
     }
     .over-view {}
     .card {
