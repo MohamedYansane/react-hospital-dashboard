@@ -1,0 +1,103 @@
+.main-content-registration {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: calc(100% - 270px);
+}
+
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-details {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 2.5rem;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.gender-details input:nth-child(2) {
+    margin-left: 3px;
+}
+
+.gender-title {
+    margin-left: 2px;
+}
+
+.category {
+    width: 70%;
+}
+
+.category label {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+
+/*le dot-one servira de reference à l'input radio à traver le label
+on n'allait voir l'effet des height et button sans donner
+à leurs classe parent la propriete flex*/
+
+.dot-one {
+    height: 13px;
+    width: 13px;
+    background: #c7d2fe;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+
+/*pour l'animation j'ajouterai le border-bottom width
+ et le :focus et :valid puis à la fin une transition*/
+
+.input-box input {
+    padding: 8px 8px 8px 15px;
+    outline: none;
+    background: none;
+    border: 1px solid #c7d2fe;
+    border-bottom-width: 2px;
+    transition: all 0.3 ease;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    -webkit-transition: all 0.3 ease;
+    -moz-transition: all 0.3 ease;
+    -ms-transition: all 0.3 ease;
+    -o-transition: all 0.3 ease;
+}
+
+.input-box input:focus {
+    border-color: #7c3aed;
+}
+
+.register-btn {
+    width: 100%;
+    padding: 8px;
+    color: #fff;
+}
+
+@media screen and (max-width:845px) {
+    .container {
+        padding: 10px;
+    }
+    .main-content-registration {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+}
