@@ -10,6 +10,7 @@ import {
   ListRounded,
   Search,
 } from "@mui/icons-material";
+import { Badge } from "@mui/material";
 export const Header = ({ dashboard, photo, setClass }) => {
   return (
     <>
@@ -33,7 +34,9 @@ export const Header = ({ dashboard, photo, setClass }) => {
           </div>
           <div className="notifications-profile">
             <div className="p-icon bell ">
-              <NotificationsRounded className=" w-7 h-7" />
+              <Badge badgeContent={3} color="primary">
+                <NotificationsRounded className=" w-7 h-7" />
+              </Badge>
             </div>
             <div className="p-icon lock">
               <LockRounded className="lock-icon" />

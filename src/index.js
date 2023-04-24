@@ -7,7 +7,7 @@ import { Registration } from "./components/registration/Registration";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    {/** <App />*/}
-    <Registration />
+    {/**  <Registration />*/}
+    <App />
   </React.StrictMode>
 );
